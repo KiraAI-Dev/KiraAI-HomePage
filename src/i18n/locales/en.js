@@ -11,6 +11,7 @@ export default {
     quickstart: 'Quick Start',
     community: 'Community',
     docs: 'Docs',
+    plugins: 'Plugins',
   },
   hero: {
     badge: 'Open Source · AGPL-3.0 · In Active Development',

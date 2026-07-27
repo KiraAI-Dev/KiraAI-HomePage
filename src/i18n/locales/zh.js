@@ -11,6 +11,7 @@ export default {
     quickstart: '快速开始',
     community: '社区',
     docs: '文档',
+    plugins: '插件',
   },
   hero: {
     badge: '开源 · AGPL-3.0 · 活跃开发中',

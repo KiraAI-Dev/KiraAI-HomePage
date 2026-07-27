@@ -11,6 +11,7 @@ export default {
     quickstart: 'クイックスタート',
     community: 'コミュニティ',
     docs: 'ドキュメント',
+    plugins: 'プラグイン',
   },
   hero: {
     badge: 'オープンソース · AGPL-3.0 · 活発に開発中',
