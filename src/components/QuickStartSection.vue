@@ -1,34 +1,25 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { LINKS } from '../links.js'
 
-const steps = [
-  {
-    n: '01',
-    title: '下载源码',
-    desc: '前往 GitHub Releases 页面，下载最新版本的源代码并解压。',
-  },
-  {
-    n: '02',
-    title: '一键启动',
-    desc: 'Windows 运行 scripts/run.bat，Linux / macOS 运行 scripts/run.sh，脚本会自动完成环境准备。',
-  },
-  {
-    n: '03',
-    title: 'Web 界面配置',
-    desc: '打开 Web 管理界面，配置模型提供商、平台适配器与角色设定，你的数字生命即刻上线。',
-  },
+const { t } = useI18n()
+
+const stepKeys = [
+  { n: '01', key: 's1' },
+  { n: '02', key: 's2' },
+  { n: '03', key: 's3' },
 ]
 
 const os = ref('windows')
-const commands = {
-  windows: ['# 解压源码后，进入项目目录', 'cd KiraAI', '', '# 一键启动', '.\\scripts\\run.bat'],
-  unix: ['# 解压源码后，进入项目目录', 'cd KiraAI', '', '# 一键启动', 'chmod +x scripts/run.sh', './scripts/run.sh'],
-}
+const commands = computed(() => ({
+  windows: [t('quickstart.commentExtract'), 'cd KiraAI', '', t('quickstart.commentRun'), '.\\scripts\\run.bat'],
+  unix: [t('quickstart.commentExtract'), 'cd KiraAI', '', t('quickstart.commentRun'), 'chmod +x scripts/run.sh', './scripts/run.sh'],
+}))
 
 const copied = ref(false)
 async function copy() {
-  const text = commands[os.value].filter((l) => l && !l.startsWith('#')).join('\n')
+  const text = commands.value[os.value].filter((l) => l && !l.startsWith('#')).join('\n')
   try {
     await navigator.clipboard.writeText(text)
     copied.value = true
@@ -42,23 +33,21 @@ async function copy() {
     <div class="container qs">
       <div class="qs-left reveal">
         <span class="section-tag">Quick Start</span>
-        <h2 class="section-title">三步，唤醒你的数字生命</h2>
-        <p class="section-desc">
-          无需复杂部署，环境要求仅为 Python 3.10+ 与 Node.js 18+。
-        </p>
+        <h2 class="section-title">{{ t('quickstart.title') }}</h2>
+        <p class="section-desc">{{ t('quickstart.desc') }}</p>
 
         <ol class="steps">
-          <li v-for="s in steps" :key="s.n" class="step">
+          <li v-for="s in stepKeys" :key="s.key" class="step">
             <span class="step-n">{{ s.n }}</span>
             <div>
-              <h3>{{ s.title }}</h3>
-              <p>{{ s.desc }}</p>
+              <h3>{{ t(`quickstart.steps.${s.key}.title`) }}</h3>
+              <p>{{ t(`quickstart.steps.${s.key}.desc`) }}</p>
             </div>
           </li>
         </ol>
 
         <a :href="LINKS.releases" target="_blank" rel="noopener" class="btn btn-primary">
-          获取最新版本
+          {{ t('quickstart.download') }}
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="16" height="16">
             <path d="M12 4v12m0 0-5-5m5 5 5-5M4 20h16" />
           </svg>
@@ -72,11 +61,11 @@ async function copy() {
             <button :class="{ active: os === 'windows' }" @click="os = 'windows'">Windows</button>
             <button :class="{ active: os === 'unix' }" @click="os = 'unix'">Linux / macOS</button>
           </div>
-          <button class="copy-btn" @click="copy">{{ copied ? '已复制 ✓' : '复制' }}</button>
+          <button class="copy-btn" @click="copy">{{ copied ? t('quickstart.copied') : t('quickstart.copy') }}</button>
         </div>
         <pre class="term-body"><code><span v-for="(line, i) in commands[os]" :key="os + i" :class="{ comment: line.startsWith('#') }">{{ line || ' ' }}
 </span></code></pre>
-        <div class="term-hint">启动后访问 Web 界面完成配置 →</div>
+        <div class="term-hint">{{ t('quickstart.hint') }}</div>
       </div>
     </div>
   </section>

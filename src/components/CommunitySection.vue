@@ -1,25 +1,13 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
 import { LINKS } from '../links.js'
 
+const { t } = useI18n()
+
 const channels = [
-  {
-    title: 'GitHub',
-    desc: '阅读源码、提交 Issue 与 PR，参与项目共建。欢迎 Star ⭐',
-    href: LINKS.github,
-    action: 'xxynet/KiraAI',
-  },
-  {
-    title: '官方文档',
-    desc: '完整的部署指南、配置说明与插件开发文档。',
-    href: LINKS.docs,
-    action: 'docs.kira-ai.top',
-  },
-  {
-    title: 'QQ 群 & Discord',
-    desc: '加入社区，与开发者和用户交流讨论、获取帮助。',
-    href: LINKS.github + '#-community',
-    action: '加入社区',
-  },
+  { key: 'github', href: LINKS.github },
+  { key: 'docs', href: LINKS.docs },
+  { key: 'chat', href: LINKS.github + '#-community' },
 ]
 </script>
 
@@ -28,25 +16,22 @@ const channels = [
     <div class="container">
       <div class="cta-panel reveal">
         <div class="panel-glow"></div>
-        <h2 class="section-title">加入 KiraAI 社区</h2>
-        <p class="section-desc center">
-          KiraAI 正处于活跃开发中，功能快速迭代。无论你是使用者还是开发者，
-          都欢迎加入我们，一起见证数字生命的成长。
-        </p>
+        <h2 class="section-title">{{ t('community.title') }}</h2>
+        <p class="section-desc center">{{ t('community.desc') }}</p>
 
         <div class="channels">
           <a
             v-for="c in channels"
-            :key="c.title"
+            :key="c.key"
             :href="c.href"
             target="_blank"
             rel="noopener"
             class="card channel"
           >
-            <h3>{{ c.title }}</h3>
-            <p>{{ c.desc }}</p>
+            <h3>{{ t(`community.channels.${c.key}.title`) }}</h3>
+            <p>{{ t(`community.channels.${c.key}.desc`) }}</p>
             <span class="channel-action">
-              {{ c.action }}
+              {{ t(`community.channels.${c.key}.action`) }}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14">
                 <path d="M7 17L17 7M17 7H8M17 7v9" />
               </svg>

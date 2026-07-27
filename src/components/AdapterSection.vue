@@ -1,14 +1,18 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
 const adapters = [
-  { name: 'QQ', desc: '国内最活跃的社交平台', color: '#12b7f5' },
-  { name: 'Telegram', desc: '全球即时通讯', color: '#2aabee' },
-  { name: 'WeChat', desc: '微信生态接入', color: '#2dc100' },
-  { name: 'Discord', desc: '社区与游戏语音', color: '#5865f2' },
-  { name: 'Bilibili', desc: '直播与弹幕互动', color: '#fb7299' },
-  { name: 'More…', desc: '更多适配器持续开发中', color: '#a78bfa', soon: true },
+  { key: 'qq', name: 'QQ', color: '#12b7f5' },
+  { key: 'telegram', name: 'Telegram', color: '#2aabee' },
+  { key: 'wechat', name: 'WeChat', color: '#2dc100' },
+  { key: 'discord', name: 'Discord', color: '#5865f2' },
+  { key: 'bilibili', name: 'Bilibili', color: '#fb7299' },
+  { key: 'more', name: 'More…', color: '#a78bfa', soon: true },
 ]
 
-const abilities = ['LLM 对话', 'TTS 语音合成', 'STT 语音识别', '图像生成', '视频生成', '角色扮演']
+const abilityKeys = ['llm', 'tts', 'stt', 'image', 'video', 'roleplay']
 </script>
 
 <template>
@@ -16,32 +20,29 @@ const abilities = ['LLM 对话', 'TTS 语音合成', 'STT 语音识别', '图像
     <div class="container">
       <div class="reveal">
         <span class="section-tag">Adapters</span>
-        <h2 class="section-title">一个数字生命，活跃在所有平台</h2>
-        <p class="section-desc">
-          适配器（Adapter）将数字生命中心与各大聊天平台连接起来。挂载多个适配器，
-          你的 AI 伙伴便可以同时出现在不同平台，与不同的人对话。
-        </p>
+        <h2 class="section-title">{{ t('adapters.title') }}</h2>
+        <p class="section-desc">{{ t('adapters.desc') }}</p>
       </div>
 
       <div class="adapter-grid">
         <article
           v-for="(a, i) in adapters"
-          :key="a.name"
+          :key="a.key"
           class="card adapter reveal"
           :style="{ transitionDelay: (i % 3) * 0.08 + 's' }"
         >
           <span class="adapter-dot" :style="{ background: a.color, boxShadow: `0 0 14px ${a.color}88` }"></span>
           <div>
-            <h3>{{ a.name }} <em v-if="a.soon">Coming</em></h3>
-            <p>{{ a.desc }}</p>
+            <h3>{{ a.name }} <em v-if="a.soon">{{ t('adapters.soon') }}</em></h3>
+            <p>{{ t(`adapters.items.${a.key}`) }}</p>
           </div>
         </article>
       </div>
 
       <div class="abilities reveal">
-        <span class="abilities-label">AI 能力</span>
+        <span class="abilities-label">{{ t('adapters.abilitiesLabel') }}</span>
         <ul>
-          <li v-for="ab in abilities" :key="ab">{{ ab }}</li>
+          <li v-for="k in abilityKeys" :key="k">{{ t(`adapters.abilities.${k}`) }}</li>
         </ul>
       </div>
     </div>

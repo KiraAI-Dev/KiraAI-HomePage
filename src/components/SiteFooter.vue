@@ -1,33 +1,37 @@
 <script setup>
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { LINKS } from '../links.js'
+
+const { t } = useI18n()
 
 const year = new Date().getFullYear()
 
-const groups = [
+const groups = computed(() => [
   {
-    title: '产品',
+    title: t('footer.product'),
     links: [
-      { label: '特性', href: '#features' },
-      { label: '平台适配', href: '#adapters' },
-      { label: '快速开始', href: '#quickstart' },
+      { label: t('nav.features'), href: '#features' },
+      { label: t('nav.adapters'), href: '#adapters' },
+      { label: t('nav.quickstart'), href: '#quickstart' },
     ],
   },
   {
-    title: '资源',
+    title: t('footer.resources'),
     links: [
-      { label: '官方文档', href: LINKS.docs, external: true },
+      { label: t('footer.docs'), href: LINKS.docs, external: true },
       { label: 'Releases', href: LINKS.releases, external: true },
       { label: 'Issues', href: LINKS.issues, external: true },
     ],
   },
   {
-    title: '开源',
+    title: t('footer.opensource'),
     links: [
       { label: 'GitHub', href: LINKS.github, external: true },
-      { label: 'AGPL-3.0 许可证', href: LINKS.license, external: true },
+      { label: t('footer.license'), href: LINKS.license, external: true },
     ],
   },
-]
+])
 </script>
 
 <template>
@@ -38,7 +42,7 @@ const groups = [
           <img src="/favicon.svg" alt="" />
           <span>Kira<em>AI</em></span>
         </a>
-        <p>模块化、多平台的 AI 数字生命项目。</p>
+        <p>{{ t('footer.tagline') }}</p>
       </div>
 
       <div class="footer-links">
@@ -58,8 +62,8 @@ const groups = [
     </div>
 
     <div class="container footer-bottom">
-      <span>© {{ year }} KiraAI. 基于 AGPL-3.0 许可证开源。</span>
-      <span class="made">Made with <i>♥</i> for digital life</span>
+      <span>{{ t('footer.copyright', { year }) }}</span>
+      <span class="made">{{ t('footer.made') }}</span>
     </div>
   </footer>
 </template>

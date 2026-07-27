@@ -1,5 +1,8 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
 import { LINKS } from '../links.js'
+
+const { t } = useI18n()
 
 const orbitNodes = [
   { label: 'QQ', angle: 0 },
@@ -21,38 +24,35 @@ const orbitNodes = [
       <div class="hero-copy">
         <a :href="LINKS.github" target="_blank" rel="noopener" class="badge">
           <span class="dot"></span>
-          开源 · AGPL-3.0 · 活跃开发中
+          {{ t('hero.badge') }}
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="13" height="13">
             <path d="M9 18l6-6-6-6" />
           </svg>
         </a>
 
         <h1 class="title">
-          打造属于你的
-          <span class="title-grad">AI 数字生命</span>
+          {{ t('hero.title1') }}
+          <span class="title-grad">{{ t('hero.title2') }}</span>
         </h1>
 
-        <p class="subtitle">
-          KiraAI 是一个模块化、多平台的 AI 数字生命项目，以数字生命中心为核心，
-          连接各类 AI 模型与聊天平台 —— 让拟人化的 AI 伙伴出现在你常用的每一个角落。
-        </p>
+        <p class="subtitle">{{ t('hero.subtitle') }}</p>
 
         <div class="cta">
           <a href="#quickstart" class="btn btn-primary">
-            快速开始
+            {{ t('hero.ctaStart') }}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="16" height="16">
               <path d="M5 12h14M13 6l6 6-6 6" />
             </svg>
           </a>
-          <a :href="LINKS.docs" target="_blank" rel="noopener" class="btn btn-ghost">阅读文档</a>
+          <a :href="LINKS.docs" target="_blank" rel="noopener" class="btn btn-ghost">{{ t('hero.ctaDocs') }}</a>
         </div>
 
         <div class="meta">
-          <div class="meta-item"><strong>Python 3.10+</strong><span>后端引擎</span></div>
+          <div class="meta-item"><strong>Python 3.10+</strong><span>{{ t('hero.metaBackend') }}</span></div>
           <div class="meta-sep"></div>
-          <div class="meta-item"><strong>Vue 3 + Vite</strong><span>Web 管理界面</span></div>
+          <div class="meta-item"><strong>Vue 3 + Vite</strong><span>{{ t('hero.metaWebui') }}</span></div>
           <div class="meta-sep"></div>
-          <div class="meta-item"><strong>Win / macOS / Linux</strong><span>全平台运行</span></div>
+          <div class="meta-item"><strong>{{ t('hero.metaOsValue') }}</strong><span>{{ t('hero.metaOs') }}</span></div>
         </div>
       </div>
 
