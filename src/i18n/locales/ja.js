@@ -4,6 +4,7 @@ export default {
     description:
       'KiraAI — モジュール式・マルチプラットフォームのAIデジタルライフプロジェクト。様々なAIモデルとチャットプラットフォームをつなぎ、あなただけのデジタルライフを。',
   },
+  docs_url: 'https://docs.kira-ai.top/',
   nav: {
     features: '特徴',
     adapters: 'アダプター',

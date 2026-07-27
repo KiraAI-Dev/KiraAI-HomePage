@@ -4,6 +4,7 @@ export default {
     description:
       'KiraAI — 模块化、多平台的 AI 数字生命项目。连接各类 AI 模型与聊天平台，打造属于你的数字生命。',
   },
+  docs_url: 'https://docs.kira-ai.top/zh/',
   nav: {
     features: '特性',
     adapters: '平台适配',

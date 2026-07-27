@@ -15,7 +15,7 @@ const navItems = computed(() => [
   { label: t('nav.adapters'), href: '#adapters' },
   { label: t('nav.quickstart'), href: '#quickstart' },
   { label: t('nav.community'), href: '#community' },
-  { label: t('nav.docs'), href: LINKS.docs, external: true },
+  { label: t('nav.docs'), href: t('docs_url'), external: true },
 ])
 
 const currentLocale = computed(

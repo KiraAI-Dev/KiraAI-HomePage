@@ -1,14 +1,15 @@
 <script setup>
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { LINKS } from '../links.js'
 
 const { t } = useI18n()
 
-const channels = [
+const channels = computed(() => [
   { key: 'github', href: LINKS.github },
-  { key: 'docs', href: LINKS.docs },
+  { key: 'docs', href: t('docs_url') },
   { key: 'chat', href: LINKS.github + '#-community' },
-]
+])
 </script>
 
 <template>

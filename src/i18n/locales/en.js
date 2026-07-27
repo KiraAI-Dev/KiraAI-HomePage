@@ -4,6 +4,7 @@ export default {
     description:
       'KiraAI — a modular, multi-platform AI digital life project. Connect AI models with chat platforms and build a digital life of your own.',
   },
+  docs_url: 'https://docs.kira-ai.top/',
   nav: {
     features: 'Features',
     adapters: 'Adapters',

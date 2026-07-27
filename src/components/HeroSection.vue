@@ -44,7 +44,7 @@ const orbitNodes = [
               <path d="M5 12h14M13 6l6 6-6 6" />
             </svg>
           </a>
-          <a :href="LINKS.docs" target="_blank" rel="noopener" class="btn btn-ghost">{{ t('hero.ctaDocs') }}</a>
+          <a :href="t('docs_url')" target="_blank" rel="noopener" class="btn btn-ghost">{{ t('hero.ctaDocs') }}</a>
         </div>
 
         <div class="meta">

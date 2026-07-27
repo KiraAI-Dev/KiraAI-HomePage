@@ -19,7 +19,7 @@ const groups = computed(() => [
   {
     title: t('footer.resources'),
     links: [
-      { label: t('footer.docs'), href: LINKS.docs, external: true },
+      { label: t('footer.docs'), href: t('docs_url'), external: true },
       { label: 'Releases', href: LINKS.releases, external: true },
       { label: 'Issues', href: LINKS.issues, external: true },
     ],
