@@ -5,12 +5,12 @@ import { LINKS } from '../links.js'
 const { t } = useI18n()
 
 const orbitNodes = [
-  { label: 'QQ', angle: 0 },
-  { label: 'Telegram', angle: 60 },
-  { label: 'Discord', angle: 120 },
-  { label: 'WeChat', angle: 180 },
-  { label: 'Bilibili', angle: 240 },
-  { label: 'Plugins', angle: 300 },
+  { label: 'Plugins', angle: 0 },
+  { label: 'Adapters', angle: 60 },
+  { label: 'Providers', angle: 120 },
+  { label: 'Persona', angle: 180 },
+  { label: 'Sessions', angle: 240 },
+  { label: 'Stickers', angle: 300 },
 ]
 </script>
 
