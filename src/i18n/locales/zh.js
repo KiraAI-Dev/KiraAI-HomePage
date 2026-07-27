@@ -51,7 +51,7 @@ export default {
       },
       multimodal: {
         title: '多模态 AI 能力',
-        desc: '不止对话 —— 集成 TTS 语音合成、STT 语音识别、图像与视频生成等多模态能力。',
+        desc: '不止对话 —— 集成 TTS 语音合成、STT 语音识别、图像等多模态能力。',
       },
     },
   },
@@ -64,7 +64,7 @@ export default {
       telegram: '全球即时通讯',
       wechat: '微信生态接入',
       discord: '社区与游戏语音',
-      bilibili: '直播与弹幕互动',
+      bilibili: '评论与私信',
       more: '更多适配器持续开发中',
     },
     abilitiesLabel: 'AI 能力',
@@ -73,8 +73,7 @@ export default {
       tts: 'TTS 语音合成',
       stt: 'STT 语音识别',
       image: '图像生成',
-      video: '视频生成',
-      roleplay: '角色扮演',
+      selfie: '自拍',
     },
   },
   quickstart: {

@@ -51,7 +51,7 @@ export default {
       },
       multimodal: {
         title: 'マルチモーダルAI能力',
-        desc: '会話だけではなく、TTS音声合成、STT音声認識、画像・動画生成などのマルチモーダル能力を統合。',
+        desc: '会話だけではなく、TTS音声合成、STT音声認識、画像などのマルチモーダル能力を統合。',
       },
     },
   },
@@ -64,7 +64,7 @@ export default {
       telegram: 'グローバルなメッセージング',
       wechat: 'WeChatエコシステム連携',
       discord: 'コミュニティ＆ゲームボイス',
-      bilibili: 'ライブ配信と弾幕コメント',
+      bilibili: 'コメントとプライベートメッセージ',
       more: 'さらなるアダプターを開発中',
     },
     abilitiesLabel: 'AI能力',
@@ -73,8 +73,7 @@ export default {
       tts: 'TTS音声合成',
       stt: 'STT音声認識',
       image: '画像生成',
-      video: '動画生成',
-      roleplay: 'ロールプレイ',
+      selfie: 'セルフィー',
     },
   },
   quickstart: {

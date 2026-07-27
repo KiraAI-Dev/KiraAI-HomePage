@@ -51,7 +51,7 @@ export default {
       },
       multimodal: {
         title: 'Multimodal AI Abilities',
-        desc: 'Beyond chat — integrated TTS, STT, image generation and video generation for a truly multimodal companion.',
+        desc: 'Beyond chat — integrated TTS, STT, image generation etc. for a truly multimodal companion.',
       },
     },
   },
@@ -64,7 +64,7 @@ export default {
       telegram: 'Global instant messaging',
       wechat: 'WeChat ecosystem integration',
       discord: 'Communities & game voice chat',
-      bilibili: 'Live streaming & bullet chats',
+      bilibili: 'Comments & private messages',
       more: 'More adapters in development',
     },
     abilitiesLabel: 'AI Abilities',
@@ -73,8 +73,7 @@ export default {
       tts: 'Text to Speech',
       stt: 'Speech to Text',
       image: 'Image Generation',
-      video: 'Video Generation',
-      roleplay: 'Role Play',
+      selfie: 'Selfie',
     },
   },
   quickstart: {

@@ -12,7 +12,7 @@ const adapters = [
   { key: 'more', name: 'More…', color: '#a78bfa', soon: true },
 ]
 
-const abilityKeys = ['llm', 'tts', 'stt', 'image', 'video', 'roleplay']
+const abilityKeys = ['llm', 'tts', 'stt', 'image', 'selfie']
 </script>
 
 <template>
