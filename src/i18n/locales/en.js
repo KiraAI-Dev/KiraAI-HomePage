@@ -115,10 +115,10 @@ export default {
         desc: 'Complete deployment guides, configuration references and plugin development docs.',
         action: 'docs.kira-ai.top',
       },
-      chat: {
-        title: 'QQ Group & Discord',
-        desc: 'Join the community to chat with developers and users, and get help when you need it.',
-        action: 'Join the Community',
+      plugins: {
+        title: 'Plugin Store',
+        desc: 'Explore community plugins and add new capabilities to your digital life.',
+        action: 'Browse the Plugin Store',
       },
     },
   },

@@ -115,10 +115,10 @@ export default {
         desc: '完整的部署指南、配置说明与插件开发文档。',
         action: 'docs.kira-ai.top',
       },
-      chat: {
-        title: 'QQ 群 & Discord',
-        desc: '加入社区，与开发者和用户交流讨论、获取帮助。',
-        action: '加入社区',
+      plugins: {
+        title: '插件商店',
+        desc: '探索社区开发的插件，为你的数字生命扩展更多功能。',
+        action: '浏览插件商店',
       },
     },
   },

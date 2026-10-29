@@ -9,7 +9,7 @@ const { t } = useI18n()
 const channels = computed(() => [
   { key: 'github', href: LINKS.github },
   { key: 'docs', href: t('docs_url') },
-  { key: 'chat', href: LINKS.github + '#-community' },
+  { key: 'plugins', href: LINKS.plugins },
 ])
 </script>
 

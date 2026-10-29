@@ -17,7 +17,7 @@ const navItems = computed(() => [
   { label: t('nav.quickstart'), href: '#quickstart' },
   { label: t('nav.community'), href: '#community' },
   { label: t('nav.docs'), href: t('docs_url'), external: true },
-  { label: t('nav.plugins'), href: 'https://plugins.kira-ai.top/', external: true },
+  { label: t('nav.plugins'), href: LINKS.plugins, external: true },
 ])
 
 const currentLocale = computed(
