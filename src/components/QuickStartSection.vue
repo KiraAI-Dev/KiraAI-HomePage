@@ -1,7 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { LINKS } from '../links.js'
 
 const { t } = useI18n()
 
@@ -10,22 +8,6 @@ const stepKeys = [
   { n: '02', key: 's2' },
   { n: '03', key: 's3' },
 ]
-
-const os = ref('windows')
-const commands = computed(() => ({
-  windows: [t('quickstart.commentExtract'), 'cd KiraAI', '', t('quickstart.commentRun'), '.\\scripts\\run.bat'],
-  unix: [t('quickstart.commentExtract'), 'cd KiraAI', '', t('quickstart.commentRun'), 'chmod +x scripts/run.sh', './scripts/run.sh'],
-}))
-
-const copied = ref(false)
-async function copy() {
-  const text = commands.value[os.value].filter((l) => l && !l.startsWith('#')).join('\n')
-  try {
-    await navigator.clipboard.writeText(text)
-    copied.value = true
-    setTimeout(() => (copied.value = false), 1600)
-  } catch {}
-}
 </script>
 
 <template>
@@ -46,7 +28,7 @@ async function copy() {
           </li>
         </ol>
 
-        <a :href="LINKS.releases" target="_blank" rel="noopener" class="btn btn-primary">
+        <a :href="t('docs_url') + 'deployment/launcher.html'" target="_blank" rel="noopener" class="btn btn-primary">
           {{ t('quickstart.download') }}
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="16" height="16">
             <path d="M12 4v12m0 0-5-5m5 5 5-5M4 20h16" />
@@ -54,18 +36,22 @@ async function copy() {
         </a>
       </div>
 
-      <div class="terminal card reveal">
-        <div class="term-bar">
-          <span class="term-dots"><i></i><i></i><i></i></span>
-          <div class="term-tabs">
-            <button :class="{ active: os === 'windows' }" @click="os = 'windows'">Windows</button>
-            <button :class="{ active: os === 'unix' }" @click="os = 'unix'">Linux / macOS</button>
-          </div>
-          <button class="copy-btn" @click="copy">{{ copied ? t('quickstart.copied') : t('quickstart.copy') }}</button>
+      <div class="launcher card reveal">
+        <div class="launcher-header">
+          <img src="/favicon.svg" alt="" width="48" height="48" />
+          <h3>KiraAI Launcher</h3>
         </div>
-        <pre class="term-body"><code><span v-for="(line, i) in commands[os]" :key="os + i" :class="{ comment: line.startsWith('#') }">{{ line || ' ' }}
-</span></code></pre>
-        <div class="term-hint">{{ t('quickstart.hint') }}</div>
+        <div class="launcher-option">
+          <h4>{{ t('quickstart.installerTitle') }}</h4>
+          <p>{{ t('quickstart.installerDesc') }}</p>
+        </div>
+        <div class="launcher-option">
+          <h4>{{ t('quickstart.portableTitle') }}</h4>
+          <p>{{ t('quickstart.portableDesc') }}</p>
+        </div>
+        <a :href="t('docs_url') + 'deployment/launcher.html'" target="_blank" rel="noopener" class="launcher-guide">
+          {{ t('quickstart.guide') }}
+        </a>
       </div>
     </div>
   </section>
@@ -120,108 +106,48 @@ async function copy() {
   color: var(--text-dim);
 }
 
-/* ---------- terminal ---------- */
-.terminal {
-  overflow: hidden;
-  background: #0b0b16;
+.launcher {
+  padding: 32px;
 }
 
-.terminal:hover {
-  transform: none;
-}
-
-.term-bar {
+.launcher-header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 14px;
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--border);
+  gap: 16px;
+  margin-bottom: 28px;
 }
 
-.term-dots {
-  display: flex;
-  gap: 7px;
+.launcher-header h3 {
+  font-size: 22px;
+  font-weight: 700;
 }
 
-.term-dots i {
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: #3a3a4c;
+.launcher-option {
+  padding: 20px 0;
+  border-top: 1px solid var(--border);
 }
 
-.term-dots i:nth-child(1) {
-  background: #ff5f57;
-}
-
-.term-dots i:nth-child(2) {
-  background: #febc2e;
-}
-
-.term-dots i:nth-child(3) {
-  background: #28c840;
-}
-
-.term-tabs {
-  display: flex;
-  gap: 6px;
-  margin-inline: auto;
-}
-
-.term-tabs button {
-  padding: 5px 14px;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  background: none;
-  color: var(--text-faint);
-  font-size: 12.5px;
+.launcher-option h4 {
+  font-size: 16px;
   font-weight: 600;
-  font-family: var(--font);
-  cursor: pointer;
-  transition: color 0.2s ease, background 0.2s ease;
 }
 
-.term-tabs button.active {
-  background: var(--surface-hover);
-  border-color: var(--border);
-  color: var(--text);
-}
-
-.copy-btn {
-  padding: 5px 13px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: none;
+.launcher-option p {
+  margin-top: 6px;
   color: var(--text-dim);
-  font-size: 12.5px;
-  font-family: var(--font);
-  cursor: pointer;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  font-size: 14.5px;
 }
 
-.copy-btn:hover {
-  color: var(--text);
-  border-color: rgba(167, 139, 250, 0.5);
+.launcher-guide {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--violet);
+  font-size: 14px;
 }
 
-.term-body {
-  padding: 22px 22px 12px;
-  font-family: var(--mono);
-  font-size: 13.5px;
-  line-height: 1.9;
-  color: #c9d1e3;
-  overflow-x: auto;
-}
-
-.term-body .comment {
-  color: var(--text-faint);
-}
-
-.term-hint {
-  padding: 0 22px 20px;
-  font-size: 12.5px;
-  color: var(--text-faint);
-  font-family: var(--mono);
+.launcher-guide:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 960px) {
