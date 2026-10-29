@@ -53,6 +53,10 @@ a {
   margin-inline: auto;
 }
 
+.lucide {
+  flex-shrink: 0;
+}
+
 /* ---------- shared section styles ---------- */
 .section {
   padding: 104px 0;

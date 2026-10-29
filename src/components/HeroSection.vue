@@ -1,5 +1,6 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
+import { ArrowRight, ChevronRight } from '@lucide/vue'
 import { LINKS } from '../links.js'
 
 const { t } = useI18n()
@@ -25,9 +26,7 @@ const orbitNodes = [
         <a :href="LINKS.github" target="_blank" rel="noopener" class="badge">
           <span class="dot"></span>
           {{ t('hero.badge') }}
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="13" height="13">
-            <path d="M9 18l6-6-6-6" />
-          </svg>
+          <ChevronRight :size="13" :stroke-width="2.4" aria-hidden="true" />
         </a>
 
         <h1 class="title">
@@ -40,9 +39,7 @@ const orbitNodes = [
         <div class="cta">
           <a href="#quickstart" class="btn btn-primary">
             {{ t('hero.ctaStart') }}
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="16" height="16">
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg>
+            <ArrowRight :size="16" :stroke-width="2.4" aria-hidden="true" />
           </a>
           <a :href="t('docs_url')" target="_blank" rel="noopener" class="btn btn-ghost">{{ t('hero.ctaDocs') }}</a>
         </div>

@@ -99,7 +99,7 @@ export default {
     installerDesc: '按提示完成安装，支持自动更新。',
     portableTitle: '便携版',
     portableDesc: '按需解压后直接运行，无需安装。',
-    guide: '查看完整部署指南 →',
+    guide: '查看完整部署指南',
   },
   community: {
     title: '加入 KiraAI 社区',
@@ -107,7 +107,7 @@ export default {
     channels: {
       github: {
         title: 'GitHub',
-        desc: '阅读源码、提交 Issue 与 PR，参与项目共建。欢迎 Star ⭐',
+        desc: '阅读源码、提交 Issue 与 PR，参与项目共建。欢迎 Star {star}',
         action: 'xxynet/KiraAI',
       },
       docs: {
@@ -130,6 +130,6 @@ export default {
     docs: '官方文档',
     license: 'AGPL-3.0 许可证',
     copyright: '© {year} KiraAI. 基于 AGPL-3.0 许可证开源。',
-    made: 'Made with ♥ for digital life',
+    made: 'Made with {heart} for digital life',
   },
 }

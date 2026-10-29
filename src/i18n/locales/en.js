@@ -99,7 +99,7 @@ export default {
     installerDesc: 'Follow the installation prompts. Supports automatic updates.',
     portableTitle: 'Portable',
     portableDesc: 'Extract if needed and run directly. No installation required.',
-    guide: 'Read the full deployment guide →',
+    guide: 'Read the full deployment guide',
   },
   community: {
     title: 'Join the KiraAI Community',
@@ -107,7 +107,7 @@ export default {
     channels: {
       github: {
         title: 'GitHub',
-        desc: 'Read the source, file issues and PRs, and help build the project. Stars welcome ⭐',
+        desc: 'Read the source, file issues and PRs, and help build the project. Stars welcome {star}',
         action: 'xxynet/KiraAI',
       },
       docs: {
@@ -130,6 +130,6 @@ export default {
     docs: 'Documentation',
     license: 'AGPL-3.0 License',
     copyright: '© {year} KiraAI. Open-sourced under the AGPL-3.0 license.',
-    made: 'Made with ♥ for digital life',
+    made: 'Made with {heart} for digital life',
   },
 }

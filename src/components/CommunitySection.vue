@@ -1,6 +1,7 @@
 <script setup>
 import { computed } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { I18nT, useI18n } from 'vue-i18n'
+import { ArrowUpRight, Star } from '@lucide/vue'
 import { LINKS } from '../links.js'
 
 const { t } = useI18n()
@@ -30,12 +31,12 @@ const channels = computed(() => [
             class="card channel"
           >
             <h3>{{ t(`community.channels.${c.key}.title`) }}</h3>
-            <p>{{ t(`community.channels.${c.key}.desc`) }}</p>
+            <I18nT :keypath="`community.channels.${c.key}.desc`" tag="p" scope="global">
+              <template #star><Star class="star" :size="14" aria-hidden="true" /></template>
+            </I18nT>
             <span class="channel-action">
               {{ t(`community.channels.${c.key}.action`) }}
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14">
-                <path d="M7 17L17 7M17 7H8M17 7v9" />
-              </svg>
+              <ArrowUpRight :size="14" :stroke-width="2.2" aria-hidden="true" />
             </span>
           </a>
         </div>
@@ -97,6 +98,11 @@ const channels = computed(() => [
   font-size: 13.5px;
   color: var(--text-dim);
   flex: 1;
+}
+
+.star {
+  vertical-align: -0.15em;
+  color: var(--violet);
 }
 
 .channel-action {

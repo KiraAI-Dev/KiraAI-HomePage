@@ -1,5 +1,6 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
+import { ArrowRight, Download } from '@lucide/vue'
 
 const { t } = useI18n()
 
@@ -30,9 +31,7 @@ const stepKeys = [
 
         <a :href="t('docs_url') + 'deployment/launcher.html'" target="_blank" rel="noopener" class="btn btn-primary">
           {{ t('quickstart.download') }}
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="16" height="16">
-            <path d="M12 4v12m0 0-5-5m5 5 5-5M4 20h16" />
-          </svg>
+          <Download :size="16" :stroke-width="2.2" aria-hidden="true" />
         </a>
       </div>
 
@@ -51,6 +50,7 @@ const stepKeys = [
         </div>
         <a :href="t('docs_url') + 'deployment/launcher.html'" target="_blank" rel="noopener" class="launcher-guide">
           {{ t('quickstart.guide') }}
+          <ArrowRight :size="14" aria-hidden="true" />
         </a>
       </div>
     </div>
@@ -140,7 +140,9 @@ const stepKeys = [
 }
 
 .launcher-guide {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   margin-top: 12px;
   color: var(--violet);
   font-size: 14px;

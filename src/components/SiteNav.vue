@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { ArrowUpRight, Check, ChevronDown, Globe, Menu, X } from '@lucide/vue'
 import { LINKS } from '../links.js'
 import { SUPPORTED_LOCALES, setLocale } from '../i18n/index.js'
 
@@ -66,29 +67,20 @@ onUnmounted(() => {
           @click="menuOpen = false"
         >
           {{ item.label }}
-          <svg v-if="item.external" class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M7 17L17 7M17 7H8M17 7v9" />
-          </svg>
+          <ArrowUpRight v-if="item.external" class="ext" :size="13" aria-hidden="true" />
         </a>
 
         <div class="lang">
           <button class="lang-btn" :aria-expanded="langOpen" aria-label="Language" @click="langOpen = !langOpen">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16">
-              <circle cx="12" cy="12" r="9" />
-              <path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" />
-            </svg>
+            <Globe :size="16" :stroke-width="1.8" aria-hidden="true" />
             {{ currentLocale.name }}
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12" :style="{ transform: langOpen ? 'rotate(180deg)' : '' }">
-              <path d="M6 9l6 6 6-6" />
-            </svg>
+            <ChevronDown :size="12" :stroke-width="2.2" :style="{ transform: langOpen ? 'rotate(180deg)' : '' }" aria-hidden="true" />
           </button>
           <ul v-show="langOpen" class="lang-menu">
             <li v-for="l in SUPPORTED_LOCALES" :key="l.code">
               <button :class="{ active: l.code === locale }" @click="pickLocale(l.code)">
                 {{ l.name }}
-                <svg v-if="l.code === locale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="13" height="13">
-                  <path d="M5 13l4 4L19 7" />
-                </svg>
+                <Check v-if="l.code === locale" :size="13" :stroke-width="2.4" aria-hidden="true" />
               </button>
             </li>
           </ul>
@@ -103,8 +95,8 @@ onUnmounted(() => {
       </nav>
 
       <button class="menu-btn" :aria-expanded="menuOpen" aria-label="Menu" @click="menuOpen = !menuOpen">
-        <span :class="{ x1: menuOpen }"></span>
-        <span :class="{ x2: menuOpen }"></span>
+        <X v-if="menuOpen" :size="22" aria-hidden="true" />
+        <Menu v-else :size="22" aria-hidden="true" />
       </button>
     </div>
   </header>
@@ -266,32 +258,14 @@ onUnmounted(() => {
 
 .menu-btn {
   display: none;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 6px;
   width: 40px;
   height: 40px;
+  color: var(--text);
   background: none;
   border: none;
   cursor: pointer;
-}
-
-.menu-btn span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  margin-inline: auto;
-  border-radius: 2px;
-  background: var(--text);
-  transition: transform 0.25s ease;
-}
-
-.menu-btn .x1 {
-  transform: translateY(4px) rotate(45deg);
-}
-
-.menu-btn .x2 {
-  transform: translateY(-4px) rotate(-45deg);
 }
 
 @media (max-width: 960px) {

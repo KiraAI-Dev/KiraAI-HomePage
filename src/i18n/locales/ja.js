@@ -99,7 +99,7 @@ export default {
     installerDesc: '案内に従ってインストール。自動更新に対応しています。',
     portableTitle: 'ポータブル版',
     portableDesc: '必要に応じて展開し、そのまま実行。インストールは不要です。',
-    guide: '詳しいデプロイガイドを見る →',
+    guide: '詳しいデプロイガイドを見る',
   },
   community: {
     title: 'KiraAI コミュニティに参加しよう',
@@ -107,7 +107,7 @@ export default {
     channels: {
       github: {
         title: 'GitHub',
-        desc: 'ソースコードを読み、Issue や PR で開発に参加。Star も歓迎です ⭐',
+        desc: 'ソースコードを読み、Issue や PR で開発に参加。Star も歓迎です {star}',
         action: 'xxynet/KiraAI',
       },
       docs: {
@@ -130,6 +130,6 @@ export default {
     docs: '公式ドキュメント',
     license: 'AGPL-3.0 ライセンス',
     copyright: '© {year} KiraAI. AGPL-3.0 ライセンスの下で公開。',
-    made: 'Made with ♥ for digital life',
+    made: 'Made with {heart} for digital life',
   },
 }

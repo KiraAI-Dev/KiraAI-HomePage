@@ -1,6 +1,7 @@
 <script setup>
 import { computed } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { I18nT, useI18n } from 'vue-i18n'
+import { Heart } from '@lucide/vue'
 import { LINKS } from '../links.js'
 
 const { t } = useI18n()
@@ -63,7 +64,9 @@ const groups = computed(() => [
 
     <div class="container footer-bottom">
       <span>{{ t('footer.copyright', { year }) }}</span>
-      <span class="made">{{ t('footer.made') }}</span>
+      <I18nT keypath="footer.made" tag="span" class="made" scope="global">
+        <template #heart><Heart class="heart" :size="13" fill="currentColor" aria-hidden="true" /></template>
+      </I18nT>
     </div>
   </footer>
 </template>
@@ -154,8 +157,8 @@ const groups = computed(() => [
   color: var(--text-faint);
 }
 
-.made i {
-  font-style: normal;
+.made .heart {
+  vertical-align: -0.15em;
   color: var(--pink);
 }
 </style>
