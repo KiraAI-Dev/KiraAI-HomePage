@@ -66,7 +66,7 @@ export default {
       wechat: '微信生态接入',
       discord: '社区与游戏语音',
       bilibili: '评论与私信',
-      more: '更多适配器持续开发中',
+      more: '社区开发的适配器',
     },
     abilitiesLabel: 'AI 能力',
     abilities: {

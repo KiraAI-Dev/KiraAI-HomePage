@@ -66,7 +66,7 @@ export default {
       wechat: 'WeChat ecosystem integration',
       discord: 'Communities & game voice chat',
       bilibili: 'Comments & private messages',
-      more: 'More adapters in development',
+      more: 'Community-developed adapters',
     },
     abilitiesLabel: 'AI Abilities',
     abilities: {
