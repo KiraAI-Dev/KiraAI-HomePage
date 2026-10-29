@@ -123,7 +123,7 @@ async function copy() {
 /* ---------- terminal ---------- */
 .terminal {
   overflow: hidden;
-  background: #0b0b16;
+  background: #0b1424;
 }
 
 .terminal:hover {
@@ -201,7 +201,7 @@ async function copy() {
 
 .copy-btn:hover {
   color: var(--text);
-  border-color: rgba(167, 139, 250, 0.5);
+  border-color: rgba(96, 165, 250, 0.5);
 }
 
 .term-body {

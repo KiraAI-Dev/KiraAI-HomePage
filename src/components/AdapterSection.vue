@@ -9,7 +9,7 @@ const adapters = [
   { key: 'wechat', name: 'WeChat', color: '#2dc100' },
   { key: 'discord', name: 'Discord', color: '#5865f2' },
   { key: 'bilibili', name: 'Bilibili', color: '#fb7299' },
-  { key: 'more', name: 'More…', color: '#a78bfa', soon: true },
+  { key: 'more', name: 'More…', color: '#60a5fa', soon: true },
 ]
 
 const abilityKeys = ['llm', 'tts', 'stt', 'image', 'selfie']
@@ -51,7 +51,7 @@ const abilityKeys = ['llm', 'tts', 'stt', 'image', 'selfie']
 
 <style scoped>
 .alt {
-  background: linear-gradient(180deg, transparent, rgba(129, 140, 248, 0.05) 30%, transparent);
+  background: linear-gradient(180deg, transparent, rgba(59, 130, 246, 0.05) 30%, transparent);
 }
 
 .adapter-grid {
@@ -91,8 +91,8 @@ const abilityKeys = ['llm', 'tts', 'stt', 'image', 'selfie']
   letter-spacing: 0.06em;
   padding: 2px 9px;
   border-radius: 999px;
-  color: var(--violet);
-  border: 1px solid rgba(167, 139, 250, 0.4);
+  color: var(--blue);
+  border: 1px solid rgba(96, 165, 250, 0.4);
 }
 
 .adapter p {

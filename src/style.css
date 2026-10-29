@@ -1,17 +1,17 @@
 :root {
-  --bg: #08080f;
-  --bg-soft: #0d0d18;
+  --bg: #080e1a;
+  --bg-soft: #0d1626;
   --surface: rgba(255, 255, 255, 0.04);
   --surface-hover: rgba(255, 255, 255, 0.07);
   --border: rgba(255, 255, 255, 0.09);
   --text: #eef0f6;
   --text-dim: #9aa0b5;
   --text-faint: #6b7188;
-  --violet: #a78bfa;
-  --indigo: #818cf8;
+  --blue: #60a5fa;
+  --blue-strong: #3b82f6;
   --sky: #38bdf8;
   --pink: #f472b6;
-  --gradient: linear-gradient(120deg, #a78bfa, #818cf8 45%, #38bdf8);
+  --gradient: linear-gradient(120deg, #60a5fa, #3b82f6 45%, #38bdf8);
   --radius: 16px;
   --nav-h: 64px;
   --font: 'Inter', 'HarmonyOS Sans SC', 'MiSans', 'PingFang SC',
@@ -40,7 +40,7 @@ body {
 }
 
 ::selection {
-  background: rgba(129, 140, 248, 0.35);
+  background: rgba(59, 130, 246, 0.35);
 }
 
 a {
@@ -67,7 +67,7 @@ a {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--indigo);
+  color: var(--blue-strong);
   margin-bottom: 14px;
 }
 
@@ -116,13 +116,13 @@ a {
 
 .btn-primary {
   background: var(--gradient);
-  color: #0b0b14;
-  box-shadow: 0 8px 30px rgba(129, 140, 248, 0.35);
+  color: #0b1322;
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.35);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(129, 140, 248, 0.5);
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.5);
 }
 
 .btn-ghost {
@@ -148,7 +148,7 @@ a {
 
 .card:hover {
   transform: translateY(-4px);
-  border-color: rgba(167, 139, 250, 0.35);
+  border-color: rgba(96, 165, 250, 0.35);
   background: var(--surface-hover);
   box-shadow: 0 16px 44px rgba(0, 0, 0, 0.35);
 }
