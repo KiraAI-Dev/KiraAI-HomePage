@@ -122,7 +122,7 @@ onUnmounted(() => {
 }
 
 .nav.scrolled {
-  background: rgba(8, 8, 15, 0.72);
+  background: rgba(8, 14, 26, 0.72);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom-color: var(--border);
@@ -211,7 +211,7 @@ onUnmounted(() => {
 
 .lang-btn:hover {
   color: var(--text);
-  border-color: rgba(167, 139, 250, 0.45);
+  border-color: rgba(96, 165, 250, 0.45);
 }
 
 .lang-btn svg {
@@ -227,7 +227,7 @@ onUnmounted(() => {
   padding: 6px;
   border-radius: 14px;
   border: 1px solid var(--border);
-  background: rgba(13, 13, 24, 0.97);
+  background: rgba(13, 22, 38, 0.97);
   backdrop-filter: blur(16px);
   box-shadow: 0 16px 44px rgba(0, 0, 0, 0.5);
 }
@@ -256,7 +256,7 @@ onUnmounted(() => {
 }
 
 .lang-menu button.active {
-  color: var(--violet);
+  color: var(--blue);
 }
 
 .gh-btn {
@@ -308,7 +308,7 @@ onUnmounted(() => {
     align-items: stretch;
     gap: 4px;
     padding: 12px 24px 20px;
-    background: rgba(8, 8, 15, 0.96);
+    background: rgba(8, 14, 26, 0.96);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
     display: none;

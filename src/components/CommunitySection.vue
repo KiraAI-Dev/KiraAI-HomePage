@@ -51,7 +51,7 @@ const channels = computed(() => [
   padding: 72px 40px;
   border-radius: 28px;
   border: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(129, 140, 248, 0.09), rgba(13, 13, 24, 0.6));
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.09), rgba(13, 22, 38, 0.6));
   overflow: hidden;
 }
 
@@ -63,7 +63,7 @@ const channels = computed(() => [
   left: 50%;
   transform: translateX(-50%);
   border-radius: 50%;
-  background: rgba(129, 140, 248, 0.28);
+  background: rgba(59, 130, 246, 0.28);
   filter: blur(100px);
   pointer-events: none;
 }
@@ -84,7 +84,7 @@ const channels = computed(() => [
   padding: 26px 24px;
   display: flex;
   flex-direction: column;
-  background: rgba(8, 8, 15, 0.55);
+  background: rgba(8, 14, 26, 0.55);
 }
 
 .channel h3 {

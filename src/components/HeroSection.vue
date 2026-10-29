@@ -97,7 +97,7 @@ const orbitNodes = [
   height: 560px;
   top: -180px;
   left: -120px;
-  background: rgba(129, 140, 248, 0.22);
+  background: rgba(59, 130, 246, 0.22);
 }
 
 .glow-b {
@@ -141,7 +141,7 @@ const orbitNodes = [
 }
 
 .badge:hover {
-  border-color: rgba(167, 139, 250, 0.45);
+  border-color: rgba(96, 165, 250, 0.45);
   color: var(--text);
 }
 
@@ -245,7 +245,7 @@ const orbitNodes = [
   width: 96px;
   height: 96px;
   border-radius: 26px;
-  box-shadow: 0 0 60px rgba(129, 140, 248, 0.55);
+  box-shadow: 0 0 60px rgba(59, 130, 246, 0.55);
   position: relative;
   z-index: 2;
 }
@@ -255,7 +255,7 @@ const orbitNodes = [
   width: 130px;
   height: 130px;
   border-radius: 36px;
-  border: 1px solid rgba(167, 139, 250, 0.5);
+  border: 1px solid rgba(96, 165, 250, 0.5);
   animation: pulse 2.8s ease-out infinite;
 }
 
@@ -289,7 +289,7 @@ const orbitNodes = [
   transform: translate(-50%, -50%) rotate(calc(-1 * var(--angle)));
   padding: 7px 15px;
   border-radius: 999px;
-  background: rgba(13, 13, 24, 0.92);
+  background: rgba(13, 22, 38, 0.92);
   border: 1px solid var(--border);
   font-size: 13px;
   font-weight: 600;
